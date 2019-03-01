@@ -1,0 +1,2204 @@
+#: import math math
+#: import main tryout
+#: import ListAdapter kivy.adapters.listadapter.ListAdapter
+#: import ListItemButton kivy.uix.listview.ListItemButton
+
+ScreenManagment:
+    OpenIntro
+    HomePage
+    How_To_Use
+    Set_OLine
+    Set_DLine
+    Point_On
+    Football_Point_On
+    Player_Line_D
+    Player_Line_O
+    Set_FootballD
+    Set_FootballO
+    Set_SpecialTeams
+    Set_Soccer
+    Set_Lacrosse
+    Set_FieldHockey
+    Set_Rugby15
+    Set_Rugby7
+    Set_Basketball
+    Lacrosse_Show
+    FootballD_Show
+    FootballO_Show
+    FootballS_Show
+    Soccer_Show
+    FieldHockey_Show
+    Rugby15_Show
+    Rugby7_Show
+    Basketball_Show
+
+
+
+<OpenIntro>:
+    orientation: 'horizontal'
+    canvas.before:
+        Color:
+            rgba: 1,1, .2, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Button:
+        font_name: "DejaVuSans"
+        font_size: .32*self.size[0]
+        size_hint: 1,1
+        pos_hint: {'center_x': .5, 'center_y': .1}
+        outline_color: (0,0,0)
+        color: 0,0,0,1
+        bold: True
+        background_color: 0,0, 0, 0
+        on_release: app.root.current = 'home'
+    Image:
+        id: picture
+        source: root.image1
+        size_hint: .9,.9
+        pos_hint: {'center_x': .5, 'center_y': .5}
+
+<HomePage>:
+    name: 'home'
+    orientation: 'horizontal'
+    canvas.before:
+        Color:
+            rgba: 1,1, .2, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        Button:
+            text: "How to Use"
+            font_name: "DejaVuSans"
+            font_size: .08*self.size[0]
+            outline_color: (1,1,.6)
+            color: 1,1,.6,1
+            outline_width: 0
+            bold: False
+            background_color: 0,0, 0, 1
+            on_release: app.root.current = 'how_to_use'
+        Button:
+            text: "Football (American)"
+            font_name: "DejaVuSans"
+            font_size: .08*self.size[0]
+            outline_color: (1,1,.6)
+            color: 1,1,.6,1
+            outline_width: 0
+            background_color: 0,0, 0, 1
+            on_release: app.root.current = 'set_footballo'
+        Button:
+            text: "Football (European)"
+            font_name: "DejaVuSans"
+            font_size: .08*self.size[0]
+            outline_color: (1,1,.6)
+            color: 1,1,.6,1
+            outline_width: 0
+            background_color: 0,0, 0, 1
+            on_release: app.root.current = 'set_soccer'
+        Button:
+            text: "Basketball"
+            font_name: "DejaVuSans"
+            font_size: .08*self.size[0]
+            outline_color: (1,1,.6)
+            color: 1,1,.6,1
+            outline_width: 0
+            background_color: 0,0, 0, 1
+            on_release: app.root.current = 'set_basketball'
+        Button:
+            text: "Ultimate Frisbee"
+            font_name: "DejaVuSans"
+            font_size: .08*self.size[0]
+            outline_color: (1,1,.6)
+            color: 1,1,.6,1
+            outline_width: 0
+            background_color: 0,0, 0, 1
+            on_release: app.root.current = 'set_oline'
+        Button:
+            text: "Lacrosse"
+            font_name: "DejaVuSans"
+            font_size: .08*self.size[0]
+            outline_color: (1,1,.6)
+            color: 1,1,.6,1
+            outline_width: 0
+            background_color: 0,0, 0, 1
+            on_release: app.root.current = 'set_lacrosse'
+        Button:
+            text: "Field Hockey"
+            font_name: "DejaVuSans"
+            font_size: .08*self.size[0]
+            outline_color: (1,1,.6)
+            color: 1,1,.6,1
+            outline_width: 0
+            background_color: 0,0, 0, 1
+            on_release: app.root.current = 'set_fieldhockey'
+        Button:
+            text: "Rubgy (15s)"
+            font_name: "DejaVuSans"
+            font_size: .08*self.size[0]
+            outline_color: (1,1,.6)
+            color: 1,1,.6,1
+            outline_width: 0
+            background_color: 0,0, 0, 1
+            on_release: app.root.current = 'set_rugby15'
+        Button:
+            text: "Rugby (7s)"
+            font_name: "DejaVuSans"
+            font_size: .08*self.size[0]
+            outline_color: (1,1,.6)
+            color: 1,1,.6,1
+            background_color: 0,0, 0, 1
+            outline_width: 0
+            on_release: app.root.current = 'set_rugby7'
+
+<How_To_Use>:
+    name: 'how_to_use'
+    orientation: 'vertical'
+    canvas.before:
+        Color:
+            rgba: 1,1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    ScrollView:
+        canvas.before:
+            Color:
+                rgba: 1,1, 1, 1
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        scroll_y:1
+        bar_margin: -15
+        bar_width: 5
+        bar_color: 0,0,0,1
+        size_hint: .95,.88
+        pos_hint: {'center_x': .5, 'center_y': .54}
+        GridLayout:
+            cols: 1
+            size_hint_y: None
+            height: self.minimum_height
+            Label:
+                color: 0,0,0,1
+                text: root.text0
+                font_name: "DejaVuSans"
+                font_size: .0511*self.width
+                text_size: self.width, None
+                bold: 25
+                size_hint_y: None
+                height: self.texture_size[1]
+            Label:
+                color: 0,0,0,1
+                text: root.text1
+                font_name: "DejaVuSans"
+                font_size: .0511*self.width
+                text_size: self.width, None
+                bold: 25
+                size_hint_y: None
+                height: self.texture_size[1]
+            Label:
+                color: 0,0,0,1
+                text: root.text2
+                font_name: "DejaVuSans"
+                font_size: .0511*self.width
+                text_size: self.width, None
+                bold: 25
+                size_hint_y: None
+                height: self.texture_size[1]
+            Label:
+                color: 0,0,0,1
+                text: root.text3
+                font_name: "DejaVuSans"
+                font_size: .0511*self.width
+                text_size: self.width, None
+                bold: 25
+                size_hint_y: None
+                height: self.texture_size[1]
+            Label:
+                color: 0,0,0,1
+                text: root.text4
+                font_name: "DejaVuSans"
+                font_size: .0511*self.width
+                text_size: self.width, None
+                bold: 25
+                size_hint_y: None
+                height: self.texture_size[1]
+            Label:
+                color: 0,0,0,1
+                text: root.text5
+                font_name: "DejaVuSans"
+                font_size: .0511*self.width
+                text_size: self.width, None
+                bold: 25
+                size_hint_y: None
+                height: self.texture_size[1]
+            Label:
+                color: 0,0,0,1
+                text: root.text6
+                font_name: "DejaVuSans"
+                font_size: .0511*self.width
+                text_size: self.width, None
+                bold: 25
+                size_hint_y: None
+                height: self.texture_size[1]
+            Label:
+                color: 0,0,0,1
+                text: root.text7
+                font_name: "DejaVuSans"
+                font_size: .0511*self.width
+                text_size: self.width, None
+                bold: 25
+                size_hint_y: None
+                height: self.texture_size[1]
+    BoxLayout:
+        size_hint_y:.10
+        Button:
+            text: "Back"
+            font_name: "DejaVuSans"
+            font_size: .75*self.size[1]
+            outline_color: (1,1,.6)
+            color: 1,1,.6,1
+            outline_width: 0
+            background_color: 0,0, 0, 1
+            on_release: app.root.current = 'home'
+
+<PlayerListButton>:
+    font_size: .85 * self.size[1]
+    font_name: "DejaVuSans"
+    height: "60dp"
+
+<Set_OLine>:
+    name: 'set_oline'
+    name_text_input: o_name
+    o_line_list: players_view
+    canvas.before:
+        Color:
+            rgba: 1,1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: .15
+            Label:
+                id: oline_pos
+                text: "O Line: Positions: " + str(root.positions) + "/7"
+                font_name: "DejaVuSans"
+                font_size: .35*self.size[1]
+                color: 0,0,0,1
+        BoxLayout:
+            size_hint_y: .15
+            Label:
+                size_hint_x: 15
+                color: 0,0,0,1
+                text: "Name(s)"
+                font_name: "DejaVuSans"
+                font_size: .35*self.size[1]
+            TextInput:
+                size_hint_x: 30
+                id: o_name
+        BoxLayout:
+            size_hint_y: .15
+            Button:
+                text: "Add"
+                size_hint_x: 15
+                font_name: "DejaVuSans"
+                font_size: .39*self.size[1]
+                on_press: root.add()
+            Button:
+                text: "Delete"
+                size_hint_x: 15
+                font_name: "DejaVuSans"
+                font_size: .39*self.size[1]
+                on_press: root.delete()
+
+        ListView:
+            id: players_view
+            adapter:
+                ListAdapter(data = [], cls = main.PlayerListButton)
+        BoxLayout:
+            size_hint_y: .15
+            Button:
+                text: "Home"
+                font_name: "DejaVuSans"
+                font_size: .75*self.size[1]
+                outline_color: (1,1,.6)
+                color: 1,1,.6,1
+                outline_width: 0
+                bold: False
+                background_color: 0,0, 0, 1
+                on_release:
+                    root.revert()
+                    app.root.current = 'home'
+            Button:
+                text: "Next"
+                font_name: "DejaVuSans"
+                font_size: .75*self.size[1]
+                outline_color: (1,1,.6)
+                color: 1,1,.6,1
+                outline_width: 0
+                bold: False
+                background_color: 0,0, 0, 1
+                on_release: app.root.current = 'set_dline' if root.length() == 7 else root.show()
+
+<Set_DLine>:
+    name: 'set_dline'
+    name_text_input: d_name
+    orientation: 'vertical'
+    d_line_list: players_view
+    canvas.before:
+        Color:
+            rgba: 1,1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: .15
+            Label:
+                id: dline_pos
+                text: "D Line: Positions: " + str(root.positions) + "/7"
+                font_name: "DejaVuSans"
+                font_size: .35*self.size[1]
+                color: 0,0,0,1
+        BoxLayout:
+            size_hint_y: .15
+            Label:
+                size_hint_x: 15
+                color: 0,0,0,1
+                text: "Name(s)"
+                font_name: "DejaVuSans"
+                font_size: .35*self.size[1]
+            TextInput:
+                size_hint_x: 30
+                id: d_name
+        BoxLayout:
+            size_hint_y: .15
+            Button:
+                text: "Add"
+                size_hint_x: 15
+                font_name: "DejaVuSans"
+                font_size: .39*self.size[1]
+                on_press: root.add()
+            Button:
+                text: "Delete"
+                size_hint_x: 15
+                font_name: "DejaVuSans"
+                font_size: .39*self.size[1]
+                on_press: root.delete()
+        ListView:
+            id: players_view
+            adapter:
+                ListAdapter(data = [], cls = main.PlayerListButton)
+        BoxLayout:
+            size_hint_y: .15
+            Button:
+                text: "Back"
+                font_name: "DejaVuSans"
+                font_size: .75*self.size[1]
+                outline_color: (1,1,.6)
+                color: 1,1,.6,1
+                outline_width: 0
+                background_color: 0,0, 0, 1
+                on_release: app.root.current = 'set_oline'
+            Button:
+                text: "Next"
+                font_name: "DejaVuSans"
+                font_size: .75*self.size[1]
+                outline_color: (1,1,.6)
+                color: 1,1,.6,1
+                outline_width: 0
+                bold: False
+                background_color: 0,0, 0, 1
+                on_release: app.root.current = 'point_on' if root.length() == 7 else root.show()
+
+
+<Point_On>:
+    name: 'point_on'
+    orientation: 'horizontal'
+    canvas.before:
+        Color:
+            rgba: 1,1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: .15
+            Label:
+                text: "D Line"
+                font_name: "DejaVuSans"
+                font_size: .35*self.size[1]
+        BoxLayout:
+            size_hint_y: 15
+        BoxLayout:
+            size_hint_y: 55
+            orientation: 'vertical'
+            Button:
+                text: "O Point"
+                font_name: "DejaVuSans"
+                color: 1,1,.6,1
+                outline_width: 0
+                background_color: 0,0, 0, 1
+                font_size: .08*self.size[0]
+                on_release: app.root.current = 'player_line_o'
+            Button:
+                text: "D Point"
+                font_name: "DejaVuSans"
+                color: 1,1,.6,1
+                outline_width: 0
+                background_color: 0,0, 0, 1
+                font_size: .08*self.size[0]
+                on_release: app.root.current = 'player_line_d'
+            Button:
+                text: "Set Lines"
+                font_name: "DejaVuSans"
+                color: 1,1,.6,1
+                outline_width: 0
+                background_color: 0,0, 0, 1
+                font_size: .08*self.size[0]
+                on_release: app.root.current = 'set_dline'
+        BoxLayout:
+            size_hint_y: 15
+
+
+
+<Player_Line_O>:
+    name: 'player_line_o'
+    canvas.before:
+        Color:
+            rgba: 1,1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: 80
+            orientation: 'vertical'
+            Label:
+            Label:
+                id: one
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[0]
+            Label:
+                id: two
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[1]
+            Label:
+                id: three
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[2]
+            Label:
+                id: four
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[3]
+            Label:
+                id: five
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[4]
+            Label:
+                id: six
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[5]
+            Label:
+                id: seven
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[6]
+            Label:
+        BoxLayout:
+            size_hint_y: 12
+            orientation: 'horizontal'
+            Button:
+                text: "Next Point"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release:
+                    root.reset()
+                    app.root.current = 'point_on'
+            Button:
+                text: "Get Line"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release: root.create()
+
+
+<Player_Line_D>:
+    name: 'player_line_d'
+    canvas.before:
+        Color:
+            rgba: 1,1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: 80
+            orientation: 'vertical'
+            Label:
+            Label:
+                id: one
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[0]
+            Label:
+                id: two
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[1]
+            Label:
+                id: three
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[2]
+            Label:
+                id: four
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[3]
+            Label:
+                id: five
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[4]
+            Label:
+                id: six
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[5]
+            Label:
+                id: seven
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[6]
+            Label:
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 12
+            Button:
+                text: "Get Line"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release: root.create()
+            Button:
+                text: "Next Point"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release:
+                    root.reset()
+                    app.root.current = 'point_on'
+
+<Football_Point_On>:
+    name: 'football_point_on'
+    orientation: 'horizontal'
+    canvas.before:
+        Color:
+            rgba: 1,1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: .15
+            Label:
+                text: "D Line"
+                font_name: "DejaVuSans"
+                font_size: .35*self.size[1]
+        BoxLayout:
+            size_hint_y: 15
+        BoxLayout:
+            size_hint_y: 55
+            orientation: 'vertical'
+            Button:
+                text: "O Point"
+                font_name: "DejaVuSans"
+                font_size: .08*self.size[0]
+                on_release: app.root.current = 'footballo_show'
+            Button:
+                text: "D Point"
+                font_name: "DejaVuSans"
+                font_size: .08*self.size[0]
+                on_release: app.root.current = 'footballd_show'
+            Button:
+                text: "S Point"
+                font_name: "DejaVuSans"
+                font_size: .08*self.size[0]
+                on_release: app.root.current = 'footballs_show'
+            Button:
+                text: "Set Lines"
+                font_name: "DejaVuSans"
+                font_size: .08*self.size[0]
+                on_release: app.root.current = 'set_footballo'
+        BoxLayout:
+            size_hint_y: 15
+
+<Set_FootballD>:
+    name: 'set_footballd'
+    name_text_input: d_name
+    o_line_list: players_view
+    canvas.before:
+        Color:
+            rgba: 1,1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: .15
+            Label:
+                id: oline_pos
+                text: "Defense Positions: " + str(root.positions) + "/11"
+                font_name: "DejaVuSans"
+                font_size: .35*self.size[1]
+                color: 0,0,0,1
+        BoxLayout:
+            size_hint_y: .15
+            Label:
+                size_hint_x: 15
+                color: 0,0,0,1
+                text: "Name(s)"
+                font_name: "DejaVuSans"
+                font_size: .35*self.size[1]
+            TextInput:
+                size_hint_x: 30
+                id: d_name
+        BoxLayout:
+            size_hint_y: .15
+            Button:
+                text: "Add"
+                size_hint_x: 15
+                font_name: "DejaVuSans"
+                font_size: .39*self.size[1]
+                on_press: root.add()
+            Button:
+                text: "Delete"
+                size_hint_x: 15
+                font_name: "DejaVuSans"
+                font_size: .39*self.size[1]
+                on_press: root.delete()
+
+        ListView:
+            id: players_view
+            adapter:
+                ListAdapter(data = [], cls = main.PlayerListButton)
+        BoxLayout:
+            size_hint_y: .15
+            Button:
+                text: "Back"
+                font_name: "DejaVuSans"
+                font_size: .75*self.size[1]
+                outline_color: (1,1,.6)
+                color: 1,1,.6,1
+                outline_width: 0
+                bold: False
+                background_color: 0,0, 0, 1
+                on_release: app.root.current = 'set_footballo'
+            Button:
+                text: "Next"
+                font_name: "DejaVuSans"
+                font_size: .75*self.size[1]
+                outline_color: (1,1,.6)
+                color: 1,1,.6,1
+                outline_width: 0
+                bold: False
+                background_color: 0,0, 0, 1
+                on_release: app.root.current = 'set_footballs' if root.length() == 11 else root.show()
+
+<Set_FootballO>:
+    name: 'set_footballo'
+    name_text_input: o_name
+    o_line_list: players_view
+    canvas.before:
+        Color:
+            rgba: 1,1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: .15
+            Label:
+                id: oline_pos
+                text: "Offense Positions: " + str(root.positions) + "/11"
+                font_name: "DejaVuSans"
+                font_size: .35*self.size[1]
+                color: 0,0,0,1
+        BoxLayout:
+            size_hint_y: .15
+            Label:
+                size_hint_x: 15
+                color: 0,0,0,1
+                text: "Name(s)"
+                font_name: "DejaVuSans"
+                font_size: .35*self.size[1]
+            TextInput:
+                size_hint_x: 30
+                id: o_name
+        BoxLayout:
+            size_hint_y: .15
+            Button:
+                text: "Add"
+                size_hint_x: 15
+                font_name: "DejaVuSans"
+                font_size: .39*self.size[1]
+                on_press: root.add()
+            Button:
+                text: "Delete"
+                size_hint_x: 15
+                font_name: "DejaVuSans"
+                font_size: .39*self.size[1]
+                on_press: root.delete()
+
+        ListView:
+            id: players_view
+            adapter:
+                ListAdapter(data = [], cls = main.PlayerListButton)
+        BoxLayout:
+            size_hint_y: .15
+            Button:
+                text: "Home"
+                font_name: "DejaVuSans"
+                font_size: .75*self.size[1]
+                outline_color: (1,1,.6)
+                color: 1,1,.6,1
+                outline_width: 0
+                bold: False
+                background_color: 0,0, 0, 1
+                on_release:
+                    root.revert()
+                    app.root.current = 'home'
+            Button:
+                text: "Next"
+                font_name: "DejaVuSans"
+                font_size: .75*self.size[1]
+                outline_color: (1,1,.6)
+                color: 1,1,.6,1
+                outline_width: 0
+                bold: False
+                background_color: 0,0, 0, 1
+                on_release: app.root.current = 'set_footballd' if root.length() == 11 else root.show()
+
+<Set_SpecialTeams>:
+    name: 'set_footballs'
+    name_text_input: s_name
+    s_line_list: players_view
+    canvas.before:
+        Color:
+            rgba: 1,1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: .15
+            Label:
+                id: oline_pos
+                text: "Special Teams Positions: " + str(root.positions) + "/11"
+                font_name: "DejaVuSans"
+                font_size: .35*self.size[1]
+                color: 0,0,0,1
+        BoxLayout:
+            size_hint_y: .15
+            Label:
+                size_hint_x: 15
+                color: 0,0,0,1
+                text: "Name(s)"
+                font_name: "DejaVuSans"
+                font_size: .35*self.size[1]
+            TextInput:
+                size_hint_x: 30
+                id: s_name
+        BoxLayout:
+            size_hint_y: .15
+            Button:
+                text: "Add"
+                size_hint_x: 15
+                font_name: "DejaVuSans"
+                font_size: .39*self.size[1]
+                on_press: root.add()
+            Button:
+                text: "Delete"
+                size_hint_x: 15
+                font_name: "DejaVuSans"
+                font_size: .39*self.size[1]
+                on_press: root.delete()
+
+        ListView:
+            id: players_view
+            adapter:
+                ListAdapter(data = [], cls = main.PlayerListButton)
+        BoxLayout:
+            size_hint_y: .15
+            Button:
+                text: "Back"
+                font_name: "DejaVuSans"
+                font_size: .75*self.size[1]
+                outline_color: (1,1,.6)
+                color: 1,1,.6,1
+                outline_width: 0
+                bold: False
+                background_color: 0,0, 0, 1
+                on_release: app.root.current = 'set_footballo' if root.length() == 11 else root.show()
+            Button:
+                text: "Next"
+                font_name: "DejaVuSans"
+                font_size: .75*self.size[1]
+                outline_color: (1,1,.6)
+                color: 1,1,.6,1
+                outline_width: 0
+                bold: False
+                background_color: 0,0, 0, 1
+                on_release: app.root.current = 'football_point_on' if root.length() == 11 else root.show()
+
+<Set_Soccer>:
+    name: 'set_soccer'
+    name_text_input: o_name
+    o_line_list: players_view
+    canvas.before:
+        Color:
+            rgba: 1,1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: .15
+            Label:
+                id: oline_pos
+                text: "Positions: " + str(root.positions) + "/11"
+                font_name: "DejaVuSans"
+                font_size: .35*self.size[1]
+                color: 0,0,0,1
+        BoxLayout:
+            size_hint_y: .15
+            Label:
+                size_hint_x: 15
+                color: 0,0,0,1
+                text: "Name(s)"
+                font_name: "DejaVuSans"
+                font_size: .35*self.size[1]
+            TextInput:
+                size_hint_x: 30
+                id: o_name
+        BoxLayout:
+            size_hint_y: .15
+            Button:
+                text: "Add"
+                size_hint_x: 15
+                font_name: "DejaVuSans"
+                font_size: .39*self.size[1]
+                on_press: root.add()
+            Button:
+                text: "Delete"
+                size_hint_x: 15
+                font_name: "DejaVuSans"
+                font_size: .39*self.size[1]
+                on_press: root.delete()
+
+        ListView:
+            id: players_view
+            adapter:
+                ListAdapter(data = [], cls = main.PlayerListButton)
+        BoxLayout:
+            size_hint_y: .15
+            Button:
+                text: "Home"
+                font_name: "DejaVuSans"
+                font_size: .75*self.size[1]
+                outline_color: (1,1,.6)
+                color: 1,1,.6,1
+                outline_width: 0
+                bold: False
+                background_color: 0,0, 0, 1
+                on_release:
+                    root.revert()
+                    app.root.current = 'home'
+            Button:
+                text: "Next"
+                font_name: "DejaVuSans"
+                font_size: .75*self.size[1]
+                outline_color: (1,1,.6)
+                color: 1,1,.6,1
+                outline_width: 0
+                bold: False
+                background_color: 0,0, 0, 1
+                on_release: app.root.current = 'soccer_show' if root.length() == 11 else root.show()
+
+<Set_Lacrosse>:
+    name: 'set_lacrosse'
+    name_text_input: o_name
+    o_line_list: players_view
+    canvas.before:
+        Color:
+            rgba: 1,1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: .15
+            Label:
+                id: oline_pos
+                text: "Positions: " + str(root.positions) + "/10"
+                font_name: "DejaVuSans"
+                font_size: .35*self.size[1]
+                color: 0,0,0,1
+        BoxLayout:
+            size_hint_y: .15
+            Label:
+                size_hint_x: 15
+                color: 0,0,0,1
+                text: "Name(s)"
+                font_name: "DejaVuSans"
+                font_size: .35*self.size[1]
+            TextInput:
+                size_hint_x: 30
+                id: o_name
+        BoxLayout:
+            size_hint_y: .15
+            Button:
+                text: "Add"
+                size_hint_x: 15
+                font_name: "DejaVuSans"
+                font_size: .39*self.size[1]
+                on_press: root.add()
+            Button:
+                text: "Delete"
+                size_hint_x: 15
+                font_name: "DejaVuSans"
+                font_size: .39*self.size[1]
+                on_press: root.delete()
+
+        ListView:
+            id: players_view
+            adapter:
+                ListAdapter(data = [], cls = main.PlayerListButton)
+        BoxLayout:
+            size_hint_y: .15
+            Button:
+                text: "Home"
+                font_name: "DejaVuSans"
+                font_size: .75*self.size[1]
+                outline_color: (1,1,.6)
+                color: 1,1,.6,1
+                outline_width: 0
+                bold: False
+                background_color: 0,0, 0, 1
+                on_release:
+                    root.revert()
+                    app.root.current = 'home'
+            Button:
+                text: "Next"
+                font_name: "DejaVuSans"
+                font_size: .75*self.size[1]
+                outline_color: (1,1,.6)
+                color: 1,1,.6,1
+                outline_width: 0
+                bold: False
+                background_color: 0,0, 0, 1
+                on_release: app.root.current = 'lacrosse_show' if root.length() == 10 else root.show()
+
+<Set_FieldHockey>:
+    name: 'set_fieldhockey'
+    name_text_input: o_name
+    o_line_list: players_view
+    canvas.before:
+        Color:
+            rgba: 1,1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: .15
+            Label:
+                id: oline_pos
+                text: "Positions: " + str(root.positions) + "/11"
+                font_name: "DejaVuSans"
+                font_size: .35*self.size[1]
+                color: 0,0,0,1
+        BoxLayout:
+            size_hint_y: .15
+            Label:
+                size_hint_x: 15
+                color: 0,0,0,1
+                text: "Name(s)"
+                font_name: "DejaVuSans"
+                font_size: .35*self.size[1]
+            TextInput:
+                size_hint_x: 30
+                id: o_name
+        BoxLayout:
+            size_hint_y: .15
+            Button:
+                text: "Add"
+                size_hint_x: 15
+                font_name: "DejaVuSans"
+                font_size: .39*self.size[1]
+                on_press: root.add()
+            Button:
+                text: "Delete"
+                size_hint_x: 15
+                font_name: "DejaVuSans"
+                font_size: .39*self.size[1]
+                on_press: root.delete()
+
+        ListView:
+            id: players_view
+            adapter:
+                ListAdapter(data = [], cls = main.PlayerListButton)
+        BoxLayout:
+            size_hint_y: .15
+            Button:
+                text: "Home"
+                font_name: "DejaVuSans"
+                font_size: .75*self.size[1]
+                outline_color: (1,1,.6)
+                color: 1,1,.6,1
+                outline_width: 0
+                bold: False
+                background_color: 0,0, 0, 1
+                on_release:
+                    root.revert()
+                    app.root.current = 'home'
+            Button:
+                text: "Next"
+                font_name: "DejaVuSans"
+                font_size: .75*self.size[1]
+                outline_color: (1,1,.6)
+                color: 1,1,.6,1
+                outline_width: 0
+                bold: False
+                background_color: 0,0, 0, 1
+                on_release: app.root.current = 'fieldhockey_show' if root.length() == 11 else root.show()
+
+<Set_Rugby15>:
+    name: 'set_rugby15'
+    name_text_input: o_name
+    o_line_list: players_view
+    canvas.before:
+        Color:
+            rgba: 1,1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: .15
+            Label:
+                id: oline_pos
+                text: "Positions: " + str(root.positions) + "/15"
+                font_name: "DejaVuSans"
+                font_size: .35*self.size[1]
+                color: 0,0,0,1
+        BoxLayout:
+            size_hint_y: .15
+            Label:
+                size_hint_x: 15
+                color: 0,0,0,1
+                text: "Name(s)"
+                font_name: "DejaVuSans"
+                font_size: .35*self.size[1]
+            TextInput:
+                size_hint_x: 30
+                id: o_name
+        BoxLayout:
+            size_hint_y: .15
+            Button:
+                text: "Add"
+                size_hint_x: 15
+                font_name: "DejaVuSans"
+                font_size: .39*self.size[1]
+                on_press: root.add()
+            Button:
+                text: "Delete"
+                size_hint_x: 15
+                font_name: "DejaVuSans"
+                font_size: .39*self.size[1]
+                on_press: root.delete()
+
+        ListView:
+            id: players_view
+            adapter:
+                ListAdapter(data = [], cls = main.PlayerListButton)
+        BoxLayout:
+            size_hint_y: .15
+            Button:
+                text: "Home"
+                font_name: "DejaVuSans"
+                font_size: .75*self.size[1]
+                outline_color: (1,1,.6)
+                color: 1,1,.6,1
+                outline_width: 0
+                bold: False
+                background_color: 0,0, 0, 1
+                on_release:
+                    root.revert()
+                    app.root.current = 'home'
+            Button:
+                text: "Next"
+                font_name: "DejaVuSans"
+                font_size: .75*self.size[1]
+                outline_color: (1,1,.6)
+                color: 1,1,.6,1
+                outline_width: 0
+                bold: False
+                background_color: 0,0, 0, 1
+                on_release: app.root.current = 'rugby15_show' if root.length() == 15 else root.show()
+
+<Set_Rugby7>:
+    name: 'set_rugby7'
+    name_text_input: o_name
+    o_line_list: players_view
+    canvas.before:
+        Color:
+            rgba: 1,1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: .15
+            Label:
+                id: oline_pos
+                text: "Positions: " + str(root.positions) + "/7"
+                font_name: "DejaVuSans"
+                font_size: .35*self.size[1]
+                color: 0,0,0,1
+        BoxLayout:
+            size_hint_y: .15
+            Label:
+                size_hint_x: 15
+                color: 0,0,0,1
+                text: "Name(s)"
+                font_name: "DejaVuSans"
+                font_size: .35*self.size[1]
+            TextInput:
+                size_hint_x: 30
+                id: o_name
+        BoxLayout:
+            size_hint_y: .15
+            Button:
+                text: "Add"
+                size_hint_x: 15
+                font_name: "DejaVuSans"
+                font_size: .39*self.size[1]
+                on_press: root.add()
+            Button:
+                text: "Delete"
+                size_hint_x: 15
+                font_name: "DejaVuSans"
+                font_size: .39*self.size[1]
+                on_press: root.delete()
+
+        ListView:
+            id: players_view
+            adapter:
+                ListAdapter(data = [], cls = main.PlayerListButton)
+        BoxLayout:
+            size_hint_y: .15
+            Button:
+                text: "Home"
+                font_name: "DejaVuSans"
+                font_size: .75*self.size[1]
+                outline_color: (1,1,.6)
+                color: 1,1,.6,1
+                outline_width: 0
+                bold: False
+                background_color: 0,0, 0, 1
+                on_release:
+                    root.revert()
+                    app.root.current = 'home'
+            Button:
+                text: "Next"
+                font_name: "DejaVuSans"
+                font_size: .75*self.size[1]
+                outline_color: (1,1,.6)
+                color: 1,1,.6,1
+                outline_width: 0
+                bold: False
+                background_color: 0,0, 0, 1
+                on_release: app.root.current = 'rugby7_show' if root.length() == 7 else root.show()
+
+<Set_Basketball>:
+    name: 'set_basketball'
+    name_text_input: o_name
+    o_line_list: players_view
+    canvas.before:
+        Color:
+            rgba: 1,1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: .15
+            Label:
+                id: oline_pos
+                text: "Positions: " + str(root.positions) + "/5"
+                font_name: "DejaVuSans"
+                font_size: .35*self.size[1]
+                color: 0,0,0,1
+        BoxLayout:
+            size_hint_y: .15
+            Label:
+                size_hint_x: 15
+                color: 0,0,0,1
+                text: "Name(s)"
+                font_name: "DejaVuSans"
+                font_size: .35*self.size[1]
+            TextInput:
+                size_hint_x: 30
+                id: o_name
+        BoxLayout:
+            size_hint_y: .15
+            Button:
+                text: "Add"
+                size_hint_x: 15
+                font_name: "DejaVuSans"
+                font_size: .39*self.size[1]
+                on_press: root.add()
+            Button:
+                text: "Delete"
+                size_hint_x: 15
+                font_name: "DejaVuSans"
+                font_size: .39*self.size[1]
+                on_press: root.delete()
+
+        ListView:
+            id: players_view
+            adapter:
+                ListAdapter(data = [], cls = main.PlayerListButton)
+        BoxLayout:
+            size_hint_y: .15
+            Button:
+                text: "Home"
+                font_name: "DejaVuSans"
+                font_size: .75*self.size[1]
+                outline_color: (1,1,.6)
+                color: 1,1,.6,1
+                outline_width: 0
+                bold: False
+                background_color: 0,0, 0, 1
+                on_release:
+                    root.revert()
+                    app.root.current = 'home'
+            Button:
+                text: "Next"
+                font_name: "DejaVuSans"
+                font_size: .75*self.size[1]
+                outline_color: (1,1,.6)
+                color: 1,1,.6,1
+                outline_width: 0
+                bold: False
+                background_color: 0,0, 0, 1
+                on_release: app.root.current = 'basketball_show' if root.length() == 5 else root.show()
+
+<Basketball_Show>:
+    name: 'basketball_show'
+    canvas.before:
+        Color:
+            rgba: 1,1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: 80
+            orientation: 'vertical'
+            Label:
+            Label:
+                id: one
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[0]
+            Label:
+                id: two
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[1]
+            Label:
+                id: three
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[2]
+            Label:
+                id: four
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[3]
+            Label:
+                id: five
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[4]
+            Label:
+        BoxLayout:
+            size_hint_y: 12
+            orientation: 'horizontal'
+            Button:
+                text: "Positions"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release:
+                    root.reset()
+                    app.root.current = 'set_basketball'
+            Button:
+                text: "Get Line"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release: root.create()
+            Button:
+                text: "Next Point"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release:
+                    root.reset()
+                    app.root.current = 'basketball_show'
+
+<Soccer_Show>:
+    name: 'soccer_show'
+    canvas.before:
+        Color:
+            rgba: 1,1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: 80
+            orientation: 'vertical'
+            Label:
+            Label:
+                id: one
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[0]
+            Label:
+                id: two
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[1]
+            Label:
+                id: three
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[2]
+            Label:
+                id: four
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[3]
+            Label:
+                id: five
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[4]
+            Label:
+                id: six
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[5]
+            Label:
+                id: seven
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[6]
+            Label:
+                id: eight
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[7]
+            Label:
+                id: nine
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[8]
+            Label:
+                id: ten
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[9]
+            Label:
+                id: eleven
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[10]
+            Label:
+        BoxLayout:
+            size_hint_y: 12
+            orientation: 'horizontal'
+            Button:
+                text: "Positions"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release:
+                    root.reset()
+                    app.root.current = 'set_soccer'
+            Button:
+                text: "Get Line"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release: root.create()
+            Button:
+                text: "Next Point"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release:
+                    root.reset()
+                    app.root.current = 'soccer_show'
+
+<Rugby15_Show>:
+    name:'rugby15_show'
+    canvas.before:
+        Color:
+            rgba: 1,1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: 80
+            orientation: 'vertical'
+            Label:
+            Label:
+                id: one
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[0]
+            Label:
+                id: two
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[1]
+            Label:
+                id: three
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[2]
+            Label:
+                id: four
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[3]
+            Label:
+                id: five
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[4]
+            Label:
+                id: six
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[5]
+            Label:
+                id: seven
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[6]
+            Label:
+                id: eight
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[7]
+            Label:
+                id: nine
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[8]
+            Label:
+                id: ten
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[9]
+            Label:
+                id: eleven
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[10]
+            Label:
+                id: twelve
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[11]
+            Label:
+                id: thirteen
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[12]
+            Label:
+                id: fourteen
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[13]
+            Label:
+                id: fifteen
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[14]
+
+            Label:
+        BoxLayout:
+            size_hint_y: 12
+            orientation: 'horizontal'
+            Button:
+                text: "Positions"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release:
+                    root.reset()
+                    app.root.current = 'set_rugby15'
+            Button:
+                text: "Get Line"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release: root.create()
+            Button:
+                text: "Next Point"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release:
+                    root.reset()
+                    app.root.current = 'rugby15_show'
+
+<Rugby7_Show>:
+    name:'rugby7_show'
+    canvas.before:
+        Color:
+            rgba: 1,1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: 80
+            orientation: 'vertical'
+            Label:
+            Label:
+                id: one
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[0]
+            Label:
+                id: two
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[1]
+            Label:
+                id: three
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[2]
+            Label:
+                id: four
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[3]
+            Label:
+                id: five
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[4]
+            Label:
+                id: six
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[5]
+            Label:
+                id: seven
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[6]
+            Label:
+        BoxLayout:
+            size_hint_y: 12
+            orientation: 'horizontal'
+            Button:
+                text: "Positions"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release:
+                    root.reset()
+                    app.root.current = 'set_rugby7'
+            Button:
+                text: "Get Line"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release: root.create()
+            Button:
+                text: "Next Point"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release:
+                    root.reset()
+                    app.root.current = 'rugby7_show'
+
+<FootballO_Show>:
+    name:'footballo_show'
+    canvas.before:
+        Color:
+            rgba: 1,1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: 80
+            orientation: 'vertical'
+            Label:
+            Label:
+                id: one
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[0]
+            Label:
+                id: two
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[1]
+            Label:
+                id: three
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[2]
+            Label:
+                id: four
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[3]
+            Label:
+                id: five
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[4]
+            Label:
+                id: six
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[5]
+            Label:
+                id: seven
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[6]
+            Label:
+                id: eight
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[7]
+            Label:
+                id: nine
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[8]
+            Label:
+                id: ten
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[9]
+            Label:
+                id: eleven
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[10]
+            Label:
+        BoxLayout:
+            size_hint_y: 12
+            orientation: 'horizontal'
+            Button:
+                text: "Next Point"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release:
+                    root.reset()
+                    app.root.current = 'football_point_on'
+            Button:
+                text: "Get Line"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release: root.create()
+
+<FootballD_Show>:
+    name: 'footballd_show'
+    canvas.before:
+        Color:
+            rgba: 1,1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: 80
+            orientation: 'vertical'
+            Label:
+            Label:
+                id: one
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[0]
+            Label:
+                id: two
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[1]
+            Label:
+                id: three
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[2]
+            Label:
+                id: four
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[3]
+            Label:
+                id: five
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[4]
+            Label:
+                id: six
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[5]
+            Label:
+                id: seven
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[6]
+            Label:
+                id: eight
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[7]
+            Label:
+                id: nine
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[8]
+            Label:
+                id: ten
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[9]
+            Label:
+                id: eleven
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[10]
+            Label:
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 12
+            Button:
+                text: "Get Line"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release: root.create()
+            Button:
+                text: "Next Point"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release:
+                    root.reset()
+                    app.root.current = 'football_point_on'
+<FootballS_Show>:
+    name: 'footballs_show'
+    canvas.before:
+        Color:
+            rgba: 1,1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: 80
+            orientation: 'vertical'
+            Label:
+            Label:
+                id: one
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[0]
+            Label:
+                id: two
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[1]
+            Label:
+                id: three
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[2]
+            Label:
+                id: four
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[3]
+            Label:
+                id: five
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[4]
+            Label:
+                id: six
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[5]
+            Label:
+                id: seven
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[6]
+            Label:
+                id: eight
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[7]
+            Label:
+                id: nine
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[8]
+            Label:
+                id: ten
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[9]
+            Label:
+                id: eleven
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[10]
+            Label:
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 12
+            Button:
+                text: "Get Line"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release: root.create()
+            Button:
+                text: "Next Point"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release:
+                    root.reset()
+                    app.root.current = 'football_point_on'
+<Lacrosse_Show>:
+    name: 'lacrosse_show'
+    canvas.before:
+        Color:
+            rgba: 1,1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+            Label:
+                id: one
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[0]
+            Label:
+                id: two
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[1]
+            Label:
+                id: three
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[2]
+            Label:
+                id: four
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[3]
+            Label:
+                id: five
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[4]
+            Label:
+                id: six
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[5]
+            Label:
+                id: seven
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[6]
+            Label:
+                id: eight
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[7]
+            Label:
+                id: nine
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[8]
+            Label:
+                id: ten
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[9]
+            Label:
+        BoxLayout:
+            size_hint_y: .15
+            orientation: 'horizontal'
+            Button:
+                text: "Positions"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release:
+                    root.reset()
+                    app.root.current = 'set_lacrosse'
+            Button:
+                text: "Get Line"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release: root.create()
+            Button:
+                text: "Next Point"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release:
+                    root.reset()
+                    app.root.current = 'lacrosse_show'
+
+<FieldHockey_Show>:
+    name: 'fieldhockey_show'
+    canvas.before:
+        Color:
+            rgba: 1,1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+            Label:
+                id: one
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[0]
+            Label:
+                id: two
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[1]
+            Label:
+                id: three
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[2]
+            Label:
+                id: four
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[3]
+            Label:
+                id: five
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[4]
+            Label:
+                id: six
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[5]
+            Label:
+                id: seven
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[6]
+            Label:
+                id: eight
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[7]
+            Label:
+                id: nine
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[8]
+            Label:
+                id: ten
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[9]
+            Label:
+                id: eleven
+                font_size: .08*self.size[0]
+                color: 0,0,0,1
+                text: root.temp_list[10]
+            Label:
+        BoxLayout:
+            size_hint_y: .15
+            orientation: 'horizontal'
+            Button:
+                text: "Positions"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release:
+                    root.reset()
+                    app.root.current = 'set_fieldhockey'
+            Button:
+                text: "Get Line"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release: root.create()
+            Button:
+                text: "Next Point"
+                font_name: "DejaVuSans"
+                font_size: .16*self.size[0]
+                color: 1,1,.6,1
+                background_color: 0,0, 0, 1
+                on_release:
+                    root.reset()
+                    app.root.current = 'fieldhockey_show'
+
+
+
+
+<pop_up_oline>:
+    name: 'pop_up_basics'
+    size_hint: .85, .45
+    font_name: "DejaVuSans"
+    font_size: .05* self.size[0]
+    title: "Error"
+    title_size: .05* self.size[0]
+    auto_dismiss: True
+    text: "You need fill all positions"
+    Label:
+        text: "You need to fill all positions"
+        id: leave_button
+        font_name: "DejaVuSans"
+        font_size: .07* self.size[0]
+        bold: True
+
+
+<pop_up_dline>:
+    name: 'pop_up_basics'
+    size_hint: .85, .45
+    font_name: "DejaVuSans"
+    font_size: .05* self.size[0]
+    title_size: .05* self.size[0]
+    title: "Error"
+    auto_dismiss: True
+    text: "You need to fill all positions"
+    Label:
+        text: "You need to fill all positions"
+        id: leave_button
+        font_name: "DejaVuSans"
+        font_size: .07* self.size[0]
+        bold: True
+
+
+
+<pop_up_stereo>:
+    size_hint: .85, .45
+    font_name: "DejaVuSans"
+    font_size: .05* self.size[0]
+    title_size: .05* self.size[0]
+    auto_dismiss: False
+    Label:
+        id: leave_button
+        font_name: "DejaVuSans"
+        font_size: .07* self.size[0]
+        bold: True
+        on_release: root.dismiss()
+
+
+
